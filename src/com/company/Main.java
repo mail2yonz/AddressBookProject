@@ -1,3 +1,9 @@
+/*
+Yonatan Mengesha
+Address Book Project
+Java Boot camp
+ */
+
 package com.company;
 
 import java.util.ArrayList;
@@ -22,7 +28,6 @@ public class Main {
         do{
             //creating a person
             Person person= new Person();
-
 
 
 
@@ -59,16 +64,26 @@ public class Main {
             //Adds the newly created person in to the pArrayList
             pArrayList.add ( person );
 
+            //Do while loop that validates it the response of the user is other than yes or no
+            do{
+                System.out.println ("Do you want to Enter another Person?(yes/no)" );
+                answere= keyboard.nextLine ();
+                if(!answere.equalsIgnoreCase ( "yes" )&&!answere.equalsIgnoreCase ( "no" )){
+                    System.out.println ("Invalid entry please enter yes or no" );
+                }
+
+            }while(!answere.equalsIgnoreCase ( "yes" )&&!answere.equalsIgnoreCase ( "no" ));
+
+
             //Asks the user to enter another record or not and accepts from the keyboard
-            System.out.println ("Do you want to Enter another Person?(yes/no)" );
-            answere= keyboard.nextLine ();
-            if(!answere.equalsIgnoreCase ( "yes" )||!answere.equalsIgnoreCase ( "no" ))
-            {
-                break;
-            }
+
+//            if(!answere.equalsIgnoreCase ( "yes" )||!answere.equalsIgnoreCase ( "no" ))
+//            {
+//                break;
+//            }
 
 
-        }while( answere.equalsIgnoreCase ("yes")|| answere.equalsIgnoreCase ( "no" ));
+        }while( answere.equalsIgnoreCase ("yes")&& !answere.equalsIgnoreCase ( "no" ));
 
         //For each loop to display the firstName of the 5 persons
         System.out.println ("             Address Book                 " );
